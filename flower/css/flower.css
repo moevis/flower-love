@@ -1,0 +1,29 @@
+﻿*{
+   padding:0px;
+   margin:0px;
+}
+
+#show{
+   overflow:hidden;
+}
+body{
+/*   background:#FBFFD4;*/
+}
+
+canvas{
+   display:block;
+   margin:0px auto;
+}
+
+section{
+   margin:0px auto;
+   width:800px;
+}
+
+#canvasT{
+   border:1px black solid;
+}
+
+footer{
+   text-align:center;
+}
