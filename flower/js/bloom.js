@@ -11,6 +11,8 @@ var imageData;
 var pixels;
 var backgd = document.getElementById("backgd");
 
+var greetingList = ['You\'re Beautiful', 'I Love You', 'Love'];
+
 var k = 0;
 var i = 50;
 var r = 1/i;
@@ -34,6 +36,10 @@ var b = 50/i;
 //}
       var offX = 300;
       var offY = 120;
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function getHeartPoint(c) {
    var r = Math.sin(c)*Math.sqrt(Math.abs(Math.cos(c)))/(Math.sin(c)+1.4)-2*Math.sin(c)+2;
@@ -64,9 +70,10 @@ function drawFlowers(){
 }
 
 
-function drawText(){
+function drawText(text){
    context.fillStyle = "rgba(255,100,50,0.05)";
-   context.fillText("I LOVE YOU",-180,150);
+   // make text align to center
+   context.fillText(text,0-35*text.length,150);
 }
 
 function drawName(){
@@ -83,8 +90,10 @@ function changebkg(){
 function outline(){
    drawHeart();
    context.font = "70px '微软雅黑'";
+   // just random greetingList elements
+   text = greetingList[getRandomInt(0,list.length)];
    for (var i=0;i<20;i++){
-      setTimeout(drawText,120*i);
+      setTimeout(drawText(text),120*i);
    }
    setTimeout(function(){
       for (var i=0;i<20;i++){
